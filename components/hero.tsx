@@ -98,7 +98,7 @@ export default function Hero() {
           <div className="flex items-center justify-center scale-in">
             <div className="w-full aspect-square bg-muted rounded-lg flex flex-col items-center justify-center border border-border interactive-hover">
               <div className="text-center space-y-2">
-                <p className="text-sm text-foreground/60">Anime-style portrait</p>
+                <p className="text-sm text-foreground/60">style portrait</p>
                 <p className="text-xs text-foreground/40">placeholder</p>
               </div>
             </div>

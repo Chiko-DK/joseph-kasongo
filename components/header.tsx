@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X, Moon, Sun } from "lucide-react"
+import { Menu, X, Moon, Sun, Mail, CodeXml, FolderOpen, Home, IdCard } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useEffect } from "react"
 
@@ -15,10 +15,11 @@ export default function Header() {
   }, [])
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "#", icon: Home },
+    { name: "About", href: "#about", icon: IdCard },
+    { name: "Projects", href: "#projects", icon: FolderOpen },
+    { name: "Services", href: "#services", icon: CodeXml },
+    { name: "Contact", href: "#contact", icon: Mail },
   ]
 
   return (
@@ -34,8 +35,9 @@ export default function Header() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm text-foreground/70 hover:text-accent interactive-hover"
+              className="flex items-center gap-2 text-sm text-foreground/70 hover:text-accent interactive-hover"
             >
+              <link.icon size={18} className="opacity-80" />
               {link.name}
             </a>
           ))}
@@ -86,9 +88,10 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="px-4 sm:px-6 md:px-8 py-3 text-sm text-foreground/70 hover:text-accent hover:bg-muted/50 interactive-hover border-b border-border/50"
+                className="flex items-center gap-3 px-4 sm:px-6 md:px-8 py-3 text-sm text-foreground/70 hover:text-accent hover:bg-muted/50 interactive-hover border-b border-border/50"
                 onClick={() => setMobileMenuOpen(false)}
               >
+                <link.icon size={18} className="opacity-80" />
                 {link.name}
               </a>
             ))}
