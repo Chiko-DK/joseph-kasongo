@@ -31,7 +31,7 @@ export default function Projects() {
       {/* Header */}
       <div className="text-center mb-12 animate-fade-up">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-          Featured Work
+          Featured Projects
         </h2>
         <p className="mt-4 text-foreground/60 max-w-xl mx-auto text-sm md:text-base">
           A showcase of recent projects demonstrating experience in full stack
@@ -92,7 +92,7 @@ export default function Projects() {
                 className="flex items-center gap-2 px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground transition-all duration-200 hover:opacity-90 hover:-translate-y-[1px]"
               >
                 <ExternalLink size={16} />
-                Live Demo
+                Demo
               </a>
             </div>
           </Card>
