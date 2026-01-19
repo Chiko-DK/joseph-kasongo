@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   title: "Joseph Kasongo | Software Developer",
   description:
     "Software developer who builds real things. Full-stack focused with experience in web, mobile, data visualization, and machine learning.",
-  generator: "v0.app",
   icons: {
     icon: [
       {

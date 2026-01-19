@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Mail, Github, Linkedin } from "lucide-react"
+import { Mail, Github, Linkedin, Phone } from "lucide-react"
 
 export default function Contact() {
   return (
@@ -22,6 +22,14 @@ export default function Contact() {
           </a>
 
           <a
+            href="tel: +27634523316"
+            className="flex items-center gap-3 group"
+          >
+            <Phone className="text-accent group-hover:scale-110 transition-transform" size={24} />
+            <span className="text-lg text-foreground/80 group-hover:text-accent transition-colors">+27 63 452 3316</span>
+          </a>
+
+          <a
             href="https://github.com/Chiko-DK"
             target="_blank"
             rel="noopener noreferrer"
@@ -31,16 +39,6 @@ export default function Contact() {
             <span className="text-lg text-foreground/80 group-hover:text-accent transition-colors">
               github.com/Chiko-DK
             </span>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/joseph-chiko-kasongo/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 group"
-          >
-            <Linkedin className="text-accent group-hover:scale-110 transition-transform" size={24} />
-            <span className="text-lg text-foreground/80 group-hover:text-accent transition-colors">Joseph Kasongo</span>
           </a>
         </div>
 

@@ -68,7 +68,7 @@ export default function About() {
           <div className="flex justify-center md:col-span-1">
             <div className="rounded-2xl overflow-hidden w-full max-w-sm bg-muted">
               <img
-                src="/pics/profile.JPGh"   // change later
+                src="/pics/profile.JPG"   // change later
                 alt="Profile illustration"
                 className="w-full h-full object-cover"
               />
