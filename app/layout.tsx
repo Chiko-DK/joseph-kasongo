@@ -16,9 +16,37 @@ const geistMono = Geist_Mono({
 
 // change later for optimization and better SEO with images
 export const metadata: Metadata = {
-  title: "Joseph Kasongo | Software Developer",
+  title: {
+    default: "Joseph Kasongo | Software Developer",
+    template: "%s | Joseph Kasongo",
+  },
   description:
-    "Software developer who builds real things. Full-stack focused with experience in web, mobile, data visualization, and machine learning.",
+    "Software developer who builds real things. Full stack focused with experience in web, mobile, data visualization, and machine learning.",
+  metadataBase: new URL("https://joseph-kasongo.vercel.app/"),
+  openGraph: {
+    title: "Joseph Kasongo | Software Developer",
+    description:
+      "Software developer who builds real things. Full stack focused with experience in web, mobile, data visualization, and machine learning.",
+    url: "https://joseph-kasongo.vercel.app/",
+    siteName: "Joseph Kasongo Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Joseph Kasongo Software Developer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Joseph Kasongo | Software Developer",
+    description:
+      "Software developer who builds real things. Full stack focused with experience in web, mobile, data visualization, and machine learning.",
+    images: ["/og-image.png"],
+  },
   icons: {
     icon: [
       {
@@ -36,7 +64,8 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
-}
+};
+
 
 export default function RootLayout({
   children,
