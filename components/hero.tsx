@@ -2,7 +2,10 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowDown, MapPin, BriefcaseBusiness } from "lucide-react"
+import AnalyticsLink from "@/components/analytics-link"
+import { profile } from "@/lib/site"
+import { ArrowDown, BriefcaseBusiness, Github, MapPin } from "lucide-react"
+import Image from "next/image"
 
 const roles = [
   "Web Developer",
@@ -41,14 +44,17 @@ export default function Hero() {
   }, [text, isDeleting, roleIndex])
   
   return (
-    <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 slide-up">
+    <section id="home" className="relative pt-20 pb-16 md:pt-32 md:pb-24 scroll-mt-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight text-foreground slide-up">
-                Hi, I'm Chiko
+              <span className="inline-flex rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-sm font-medium text-accent">
+                Full Stack Software Developer
+              </span>
+
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight text-foreground">
+                Hi, I&apos;m Chiko
               </h1>
 
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight text-foreground slide-up">
@@ -56,7 +62,7 @@ export default function Hero() {
                 <span className="ml-1 animate-pulse">|</span>
               </h2>
               
-              <p className="text-lg text-foreground/70 leading-relaxed slide-up">Full-stack focused developer with experience across web, backend, data visualization, machine learning, and systems thinking.</p>
+              <p className="text-lg text-foreground/70 leading-relaxed slide-up">I build practical software across the frontend, backend, and data layer. Full-stack focused developer with experience across web, mobile, data visualization, machine learning, and systems thinking.</p>
             </div>
 
             {/* Location and availability row */}
@@ -75,39 +81,69 @@ export default function Hero() {
 
             </div>
 
-            {/*Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a href="/docs/CV.pdf" download className="flex-1 sm:flex-none">
-              <Button className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground button-hover">
-                Download CV
+              <Button asChild className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground button-hover">
+                <AnalyticsLink
+                  href="/docs/CV.pdf"
+                  download
+                  eventName="download_cv"
+                  eventProperties={{ placement: "hero" }}
+                >
+                  Download CV
+                </AnalyticsLink>
               </Button>
-              </a>
 
-              <a href="#contact" className="flex-1 sm:flex-none">
-                <Button
-                  variant="outline"
-                  className="w-full sm:w-auto border-border hover:bg-muted bg-transparent button-hover"
+              <Button
+                asChild
+                variant="outline"
+                className="w-full sm:w-auto border-border hover:bg-muted bg-transparent button-hover"
+              >
+                <AnalyticsLink
+                  href="#contact"
+                  eventName="section_navigation"
+                  eventProperties={{ target: "contact", placement: "hero" }}
                 >
                   Contact Me
-                </Button>
-              </a>
+                </AnalyticsLink>
+              </Button>
             </div>
           </div>
 
-          {/* Right Placeholder */}
-          <div className="flex items-center justify-center scale-in">
-            <div className="w-full aspect-square bg-muted rounded-lg flex flex-col items-center justify-center border border-border interactive-hover">
-              <div className="text-center space-y-2">
-                <p className="text-sm text-foreground/60">style portrait</p>
-                <p className="text-xs text-foreground/40">placeholder</p>
+          <div className="flex items-center justify-center">
+            <div className="relative w-full overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+              <Image
+                src="/pics/hero-workspace.svg"
+                alt="Illustration of a full stack development workspace"
+                width={720}
+                height={720}
+                priority
+                className="w-full h-auto"
+              />
+              <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-border/70 bg-background/85 p-4 backdrop-blur">
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Frontend + Backend + Data</p>
+                    <p className="text-xs text-muted-foreground">React, Next.js, APIs, SQL, Python</p>
+                  </div>
+                  <AnalyticsLink
+                    href="https://github.com/Chiko-DK"
+                    target="_blank"
+                    rel="me noopener noreferrer"
+                    aria-label="Visit Joseph Kasongo on GitHub"
+                    eventName="external_profile_click"
+                    eventProperties={{ destination: "github", placement: "hero" }}
+                    className="rounded-md bg-accent p-2 text-accent-foreground transition-colors hover:bg-accent/90"
+                  >
+                    <Github size={18} />
+                  </AnalyticsLink>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Scroll Indicator - Updated animation to be more subtle */}
         <div className="flex justify-center pt-12">
-          <a href="#about" className="animate-bounce">
+          <a href="#about" aria-label="Scroll to about section">
             <ArrowDown className="text-accent transition-colors duration-300" size={24} />
           </a>
         </div>

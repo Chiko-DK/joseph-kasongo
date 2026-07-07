@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/components/theme-provider";
+import { profile, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,24 +15,65 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// change later for optimization and better SEO with images
+const siteDescription =
+  "Joseph Kasongo is a Cape Town full stack software developer and UCT graduate building responsive web and mobile apps, backend APIs, and practical software products";
+
 export const metadata: Metadata = {
+  applicationName: "Joseph Kasongo Portfolio",
+  category: "Portfolio",
   title: {
-    default: "Joseph Kasongo | Software Developer",
+    default: "Joseph Kasongo | Full Stack Software Developer",
     template: "%s | Joseph Kasongo",
   },
-  description:
-    "Software developer who builds real things. Full stack focused with experience in web, mobile, data visualization, and machine learning.",
-  metadataBase: new URL("https://joseph-kasongo.vercel.app/"),
+  description: siteDescription,
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
+  authors: [{ name: profile.name, url: siteUrl }],
+  creator: profile.name,
+  publisher: profile.name,
+  keywords: [
+    "Joseph Kasongo",
+    "Joseph Chiko Kasongo",
+    "Chiko Damberd",
+    "Chiko Kasongo",
+    "Chiko DK",
+    "full stack software developer",
+    "junior full stack developer",
+    "entry level software developer",
+    "React developer",
+    "Next.js developer",
+    "Vue.js developer",
+    "FastAPI developer",
+    "Firebase developer",
+    "React Native developer",
+    "data visualisation developer",
+    "fintech software developer",
+    "UCT Computer Science graduate",
+    "BCom Honours Information Systems",
+    "Cape Town software developer",
+  ],
+  referrer: "origin-when-cross-origin",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "Joseph Kasongo | Software Developer",
-    description:
-      "Software developer who builds real things. Full stack focused with experience in web, mobile, data visualization, and machine learning.",
-    url: "https://joseph-kasongo.vercel.app/",
+    title: "Joseph Kasongo | Full Stack Software Developer",
+    description: siteDescription,
+    url: siteUrl,
     siteName: "Joseph Kasongo Portfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: "/pics/og-image.png",
         width: 1200,
         height: 630,
         alt: "Joseph Kasongo Software Developer",
@@ -42,27 +84,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Joseph Kasongo | Software Developer",
-    description:
-      "Software developer who builds real things. Full stack focused with experience in web, mobile, data visualization, and machine learning.",
-    images: ["/og-image.png"],
+    title: "Joseph Kasongo | Full Stack Software Developer",
+    description: siteDescription,
+    images: ["/pics/og-image.png"],
   },
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: "/icon.svg",
+  },
+  other: {
+    "profile:first_name": "Joseph",
+    "profile:last_name": "Kasongo",
+    "profile:username": "Chiko-DK",
+    "og:see_also": [profile.github, profile.linkedin, profile.cv],
   },
 };
 
@@ -77,7 +110,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DK logo">
+  <rect width="64" height="64" rx="16" fill="#2b1115"/>
+  <path d="M36 20v24H25c-9 0-16-4.7-16-12s7-12 16-12h11Z" fill="none" stroke="#f8f4f2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M36 32l14-12M36 32l14 12" fill="none" stroke="#b45b63" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
