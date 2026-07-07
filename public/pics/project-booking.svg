@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Hotel booking system preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff8f5"/>
+      <stop offset="1" stop-color="#2b1115"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#2b1115" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <g filter="url(#shadow)">
+    <rect x="88" y="52" width="464" height="256" rx="24" fill="#fffaf8"/>
+    <rect x="88" y="52" width="464" height="62" rx="24" fill="#2b1115"/>
+    <path d="M128 84h86M430 84h62" stroke="#fff8f6" stroke-width="10" stroke-linecap="round" opacity="0.76"/>
+    <rect x="128" y="142" width="122" height="126" rx="18" fill="#f1dedb"/>
+    <path d="M152 184h72M152 212h54M152 240h76" stroke="#642530" stroke-width="9" stroke-linecap="round"/>
+    <rect x="284" y="142" width="220" height="126" rx="18" fill="#2b1115"/>
+    <path d="M318 174h154M318 206h154M318 238h154" stroke="#fff8f6" stroke-width="7" stroke-linecap="round" opacity="0.22"/>
+    <rect x="318" y="164" width="42" height="30" rx="8" fill="#c97078"/>
+    <rect x="374" y="196" width="42" height="30" rx="8" fill="#c97078"/>
+    <rect x="430" y="228" width="42" height="30" rx="8" fill="#c97078"/>
+    <path d="M320 118v-22M472 118v-22" stroke="#c97078" stroke-width="12" stroke-linecap="round"/>
+  </g>
+</svg>

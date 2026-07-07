@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -124,56 +123,23 @@
     @apply bg-background text-foreground transition-colors duration-300;
   }
 
-  /* Added smooth animations for page load and interactions */
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slide-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes scale-in {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(16px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   html {
-    animation: fade-in 0.6s ease-out;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
-  /* Section animation classes */
-  .animate-in-view {
-    animation: slide-up 0.6s ease-out;
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
   }
 }
 
@@ -182,20 +148,6 @@
     @apply h-px bg-border my-16 md:my-24;
   }
 
-  /* Added reusable animation utilities */
-  .fade-in {
-    animation: fade-in 0.6s ease-out;
-  }
-
-  .slide-up {
-    animation: slide-up 0.6s ease-out;
-  }
-
-  .scale-in {
-    animation: scale-in 0.6s ease-out;
-  }
-
-  /* Hover effects for interactive elements */
   .interactive-hover {
     @apply transition-all duration-200 ease-out;
   }
@@ -207,9 +159,4 @@
   .button-hover {
     @apply hover:shadow-md transition-all duration-200 active:scale-95;
   }
-  
-  .animate-fade-up {
-    animation: fadeUp 0.6s ease-out forwards;
-  }
 }
-

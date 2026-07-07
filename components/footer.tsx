@@ -1,4 +1,5 @@
 import { Instagram, Linkedin } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 
 export default function Footer() {
@@ -9,10 +10,18 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-12">
         <div className="flex flex-col items-center text-center gap-6">
           
-          {/* Brand */}
-          <h2 className="text-xl font-semibold text-foreground">
-            Chiko DK
-          </h2>
+          <Link href="#home" className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity">
+            <Image
+              src="/icon.svg"
+              alt="Chiko DK logo"
+              width={56}
+              height={56}
+              className="h-14 w-14 rounded-2xl shadow-sm"
+            />
+            <span className="text-xl font-semibold text-foreground">
+              Chiko DK
+            </span>
+          </Link>
 
           {/* Navigation */}
           <nav className="flex flex-wrap justify-center gap-6 text-sm text-foreground/70">

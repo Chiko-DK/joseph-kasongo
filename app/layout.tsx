@@ -14,24 +14,36 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// change later for optimization and better SEO with images
+const siteDescription =
+  "Joseph Kasongo is a full stack software developer building responsive web apps, backend APIs, dashboards, and practical software products.";
+
 export const metadata: Metadata = {
   title: {
-    default: "Joseph Kasongo | Software Developer",
+    default: "Joseph Kasongo | Full Stack Software Developer",
     template: "%s | Joseph Kasongo",
   },
-  description:
-    "Software developer who builds real things. Full stack focused with experience in web, mobile, data visualization, and machine learning.",
+  description: siteDescription,
   metadataBase: new URL("https://joseph-kasongo.vercel.app/"),
+  authors: [{ name: "Joseph Kasongo" }],
+  creator: "Joseph Kasongo",
+  keywords: [
+    "Joseph Kasongo",
+    "Chiko Damberd",
+    "Chiko Kasongo",
+    "Chiko DK",
+    "full stack software developer",
+    "React developer",
+    "Next.js developer",
+    "Cape Town software developer",
+  ],
   openGraph: {
-    title: "Joseph Kasongo | Software Developer",
-    description:
-      "Software developer who builds real things. Full stack focused with experience in web, mobile, data visualization, and machine learning.",
+    title: "Joseph Kasongo | Full Stack Software Developer",
+    description: siteDescription,
     url: "https://joseph-kasongo.vercel.app/",
     siteName: "Joseph Kasongo Portfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: "/pics/og-image.png",
         width: 1200,
         height: 630,
         alt: "Joseph Kasongo Software Developer",
@@ -42,27 +54,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Joseph Kasongo | Software Developer",
-    description:
-      "Software developer who builds real things. Full stack focused with experience in web, mobile, data visualization, and machine learning.",
-    images: ["/og-image.png"],
+    title: "Joseph Kasongo | Full Stack Software Developer",
+    description: siteDescription,
+    images: ["/pics/og-image.png"],
   },
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: "/icon.svg",
   },
 };
 
@@ -77,7 +74,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

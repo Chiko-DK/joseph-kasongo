@@ -1,18 +1,16 @@
-"use client"
-
 import { Code, Smartphone, BarChart3, Server } from "lucide-react"
 
 const services = [
   {
     title: "Web Development",
     description:
-      "Building modern, responsive web applications with clean architecture, strong performance, and long term maintainability.",
+      "Building modern, responsive web applications with clean interfaces, strong performance, and maintainable structure.",
     icon: Code,
   },
   {
     title: "App Development",
     description:
-      "Designing and developing scalable applications with intuitive user experiences across web based platforms.",
+      "Designing and developing practical applications with intuitive user experiences across web-based platforms.",
     icon: Smartphone,
   },
   {
@@ -24,7 +22,7 @@ const services = [
   {
     title: "Backend & APIs",
     description:
-      "Creating robust backend systems and APIs that are secure, scalable, and easy to extend over time.",
+      "Creating backend services and APIs that organize data, support products, and remain easy to extend over time.",
     icon: Server,
   },
 ]
@@ -49,7 +47,7 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className="group relative rounded-xl bg-card border border-border p-6 card-hover scale-in"
+                className="group relative rounded-xl bg-card border border-border p-6 card-hover"
               >
                 <div className="absolute inset-y-0 left-0 w-1 bg-accent scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-300" />
 
