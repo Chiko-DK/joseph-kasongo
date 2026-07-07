@@ -2,7 +2,13 @@ export const siteUrl = "https://joseph-kasongo.vercel.app"
 
 export const profile = {
   name: "Joseph Kasongo",
-  alternateNames: ["Chiko DK", "Chiko Kasongo", "Joseph Chiko Kasongo"],
+  alternateNames: [
+    "Chiko",
+    "Chiko DK",
+    "Chiko Kasongo",
+    "Chiko Damberd",
+    "Joseph Chiko Kasongo",
+  ],
   title: "Full Stack Software Developer",
   location: "Cape Town, South Africa",
   email: "cdamberd@gmail.com",

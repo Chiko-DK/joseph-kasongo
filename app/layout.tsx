@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 const siteDescription =
-  "Joseph Kasongo is a Cape Town full stack software developer and UCT graduate building responsive web and mobile apps, backend APIs, and practical software products";
+  "Joseph Kasongo, also known as Chiko DK, is a Cape Town full stack software developer and UCT graduate building responsive web and mobile apps, backend APIs, and practical software products";
 
 export const metadata: Metadata = {
   applicationName: "Joseph Kasongo Portfolio",
@@ -30,12 +30,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  manifest: "/manifest.webmanifest",
   authors: [{ name: profile.name, url: siteUrl }],
   creator: profile.name,
   publisher: profile.name,
   keywords: [
     "Joseph Kasongo",
     "Joseph Chiko Kasongo",
+    "Chiko",
     "Chiko Damberd",
     "Chiko Kasongo",
     "Chiko DK",
@@ -89,7 +91,8 @@ export const metadata: Metadata = {
     images: ["/pics/og-image.png"],
   },
   icons: {
-    icon: "/icon.svg",
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: "/icon.svg",
   },
   other: {
     "profile:first_name": "Joseph",

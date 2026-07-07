@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import AnalyticsLink from "@/components/analytics-link"
-import { profile } from "@/lib/site"
 import { ArrowDown, BriefcaseBusiness, Github, MapPin } from "lucide-react"
 import Image from "next/image"
 
