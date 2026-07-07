@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/components/theme-provider";
+import { profile, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,31 +16,60 @@ const geistMono = Geist_Mono({
 });
 
 const siteDescription =
-  "Joseph Kasongo is a full stack software developer building responsive web apps, backend APIs, dashboards, and practical software products.";
+  "Joseph Kasongo is a Cape Town full stack software developer and UCT graduate building responsive web and mobile apps, backend APIs, and practical software products";
 
 export const metadata: Metadata = {
+  applicationName: "Joseph Kasongo Portfolio",
+  category: "Portfolio",
   title: {
     default: "Joseph Kasongo | Full Stack Software Developer",
     template: "%s | Joseph Kasongo",
   },
   description: siteDescription,
-  metadataBase: new URL("https://joseph-kasongo.vercel.app/"),
-  authors: [{ name: "Joseph Kasongo" }],
-  creator: "Joseph Kasongo",
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
+  authors: [{ name: profile.name, url: siteUrl }],
+  creator: profile.name,
+  publisher: profile.name,
   keywords: [
     "Joseph Kasongo",
+    "Joseph Chiko Kasongo",
     "Chiko Damberd",
     "Chiko Kasongo",
     "Chiko DK",
     "full stack software developer",
+    "junior full stack developer",
+    "entry level software developer",
     "React developer",
     "Next.js developer",
+    "Vue.js developer",
+    "FastAPI developer",
+    "Firebase developer",
+    "React Native developer",
+    "data visualisation developer",
+    "fintech software developer",
+    "UCT Computer Science graduate",
+    "BCom Honours Information Systems",
     "Cape Town software developer",
   ],
+  referrer: "origin-when-cross-origin",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: "Joseph Kasongo | Full Stack Software Developer",
     description: siteDescription,
-    url: "https://joseph-kasongo.vercel.app/",
+    url: siteUrl,
     siteName: "Joseph Kasongo Portfolio",
     images: [
       {
@@ -60,6 +90,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/icon.svg",
+  },
+  other: {
+    "profile:first_name": "Joseph",
+    "profile:last_name": "Kasongo",
+    "profile:username": "Chiko-DK",
+    "og:see_also": [profile.github, profile.linkedin, profile.cv],
   },
 };
 

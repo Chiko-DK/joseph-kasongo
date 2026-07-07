@@ -1,74 +1,8 @@
 import { Card } from "@/components/ui/card"
+import AnalyticsLink from "@/components/analytics-link"
+import { projects } from "@/lib/site"
 import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
-
-type Project = {
-  title: string
-  description: string
-  stack: string[]
-  image: string
-  links: {
-    github?: string
-    demo?: string
-  }
-}
-
-const projects: Project[] = [
-  {
-    title: "UniSwap Student Resale Storefront",
-    description:
-      "University resale web app for browsing, searching, and purchasing student items, with guest, customer, and admin flows backed by Firebase.",
-    stack: ["Next.js", "Tailwind CSS", "Firebase", "Vercel"],
-    image: "/pics/uniswap.png",
-    links: {
-      github: "https://github.com/Chiko-DK/UniSwap-Ecommerce_Store",
-      demo: "https://uni-swap-ecommerce-store.vercel.app/",
-    },
-  },
-  {
-    title: "MaliGo Savings MVP",
-    description:
-      "Web proof-of-concept MVP for a behaviour-first savings product, created to validate the idea before the active React Native build.",
-    stack: ["React", "FinTech", "UX Research", "Product Strategy"],
-    image: "/pics/maligo.png",
-    links: {
-      github: "https://github.com/0geder/MaliGo",
-      demo: "https://maligo-dev.vercel.app/",
-    },
-  },
-  {
-    title: "Research Visualisation - ResViz",
-    description:
-      "Capstone web application for visualising university research collaborations, topics, departments, and collaboration strength through interactive networks.",
-    stack: ["FastAPI", "Vue.js", "D3.js", "SQLite"],
-    image: "/pics/project-resviz.svg",
-    links: {},
-  },
-  {
-    title: "Lown Open Payment",
-    description:
-      "Hackathon fintech prototype for micro-lending, transparent digital agreements, wallet connection flows, and open payment standards.",
-    stack: ["Next.js", "Tailwind CSS", "Node.js", "Open Payments"],
-    image: "/pics/project-lown.svg",
-    links: { github: "https://github.com/Chiko-DK/Lown_Open-payment" },
-  },
-  {
-    title: "Scrum Poker Estimation Tool",
-    description:
-      "Agile estimation web app built during Byte Orbit vacation work to help teams vote on story points during sprint planning.",
-    stack: ["Vue.js", "Vuetify", "CSS", "Agile"],
-    image: "/pics/project-scrum.svg",
-    links: {},
-  },
-  {
-    title: "Hotel Booking System",
-    description:
-      "Desktop booking system for a small hotel, covering reservations, guest records, room availability, and business workflow management.",
-    stack: ["C#", ".NET", "Windows Forms"],
-    image: "/pics/project-booking.svg",
-    links: { github: "https://github.com/Chiko-DK/BookingSystem" },
-  },
-]
 
 export default function Projects() {
   return (
@@ -118,33 +52,37 @@ export default function Projects() {
             </div>
 
             <div className="mt-auto flex flex-wrap gap-3">
-              {project.links.github ? (
-                <a
-                  href={project.links.github}
+              {project.github ? (
+                <AnalyticsLink
+                  href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`View ${project.title} on GitHub`}
+                  eventName="project_link_click"
+                  eventProperties={{ project: project.title, destination: "github" }}
                   className="flex items-center gap-2 px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground transition-all duration-200 hover:opacity-90 hover:-translate-y-[1px]"
                 >
                   <Github size={16} />
                   GitHub
-                </a>
+                </AnalyticsLink>
               ) : null}
 
-              {project.links.demo ? (
-                <a
-                  href={project.links.demo}
+              {project.demo ? (
+                <AnalyticsLink
+                  href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Open live demo for ${project.title}`}
+                  eventName="project_link_click"
+                  eventProperties={{ project: project.title, destination: "demo" }}
                   className="flex items-center gap-2 px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground transition-all duration-200 hover:opacity-90 hover:-translate-y-[1px]"
                 >
                   <ExternalLink size={16} />
                   Demo
-                </a>
+                </AnalyticsLink>
               ) : null}
 
-              {!project.links.github && !project.links.demo ? (
+              {!project.github && !project.demo ? (
                 <span className="rounded-md border border-border px-4 py-2 text-sm text-muted-foreground">
                   Links coming soon
                 </span>

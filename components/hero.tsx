@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
+import AnalyticsLink from "@/components/analytics-link"
+import { profile } from "@/lib/site"
 import { ArrowDown, BriefcaseBusiness, Github, MapPin } from "lucide-react"
 import Image from "next/image"
 
@@ -80,20 +82,30 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a href="/docs/CV.pdf" download className="flex-1 sm:flex-none">
-              <Button className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground button-hover">
-                Download CV
+              <Button asChild className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground button-hover">
+                <AnalyticsLink
+                  href="/docs/CV.pdf"
+                  download
+                  eventName="download_cv"
+                  eventProperties={{ placement: "hero" }}
+                >
+                  Download CV
+                </AnalyticsLink>
               </Button>
-              </a>
 
-              <a href="#contact" className="flex-1 sm:flex-none">
-                <Button
-                  variant="outline"
-                  className="w-full sm:w-auto border-border hover:bg-muted bg-transparent button-hover"
+              <Button
+                asChild
+                variant="outline"
+                className="w-full sm:w-auto border-border hover:bg-muted bg-transparent button-hover"
+              >
+                <AnalyticsLink
+                  href="#contact"
+                  eventName="section_navigation"
+                  eventProperties={{ target: "contact", placement: "hero" }}
                 >
                   Contact Me
-                </Button>
-              </a>
+                </AnalyticsLink>
+              </Button>
             </div>
           </div>
 
@@ -113,15 +125,17 @@ export default function Hero() {
                     <p className="text-sm font-semibold text-foreground">Frontend + Backend + Data</p>
                     <p className="text-xs text-muted-foreground">React, Next.js, APIs, SQL, Python</p>
                   </div>
-                  <a
+                  <AnalyticsLink
                     href="https://github.com/Chiko-DK"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="me noopener noreferrer"
                     aria-label="Visit Joseph Kasongo on GitHub"
+                    eventName="external_profile_click"
+                    eventProperties={{ destination: "github", placement: "hero" }}
                     className="rounded-md bg-accent p-2 text-accent-foreground transition-colors hover:bg-accent/90"
                   >
                     <Github size={18} />
-                  </a>
+                  </AnalyticsLink>
                 </div>
               </div>
             </div>

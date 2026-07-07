@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button"
+import AnalyticsLink from "@/components/analytics-link"
+import { profile } from "@/lib/site"
 import { Mail, Github, Linkedin, Phone } from "lucide-react"
 
 export default function Contact() {
@@ -14,53 +16,77 @@ export default function Contact() {
 
         {/* Contact Links */}
         <div className="space-y-3">
-          <a href="mailto:cdamberd@gmail.com" className="flex items-center gap-3 group">
+          <AnalyticsLink
+            href={`mailto:${profile.email}`}
+            eventName="contact_click"
+            eventProperties={{ method: "email", placement: "contact_section" }}
+            className="flex items-center gap-3 group"
+          >
             <Mail className="text-accent group-hover:scale-110 transition-transform" size={24} />
             <span className="text-lg text-foreground/80 group-hover:text-accent transition-colors">
-              cdamberd@gmail.com
+              {profile.email}
             </span>
-          </a>
+          </AnalyticsLink>
 
-          <a
-            href="tel:+27634523316"
+          <AnalyticsLink
+            href={`tel:${profile.phone}`}
+            eventName="contact_click"
+            eventProperties={{ method: "phone", placement: "contact_section" }}
             className="flex items-center gap-3 group"
           >
             <Phone className="text-accent group-hover:scale-110 transition-transform" size={24} />
             <span className="text-lg text-foreground/80 group-hover:text-accent transition-colors">+27 63 452 3316</span>
-          </a>
+          </AnalyticsLink>
 
-          <a
-            href="https://github.com/Chiko-DK"
+          <AnalyticsLink
+            href={profile.github}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="me noopener noreferrer"
+            eventName="external_profile_click"
+            eventProperties={{ destination: "github", placement: "contact_section" }}
             className="flex items-center gap-3 group"
           >
             <Github className="text-accent group-hover:scale-110 transition-transform" size={24} />
             <span className="text-lg text-foreground/80 group-hover:text-accent transition-colors">
               github.com/Chiko-DK
             </span>
-          </a>
+          </AnalyticsLink>
 
-          <a
-            href="https://www.linkedin.com/in/joseph-chiko-kasongo/"
+          <AnalyticsLink
+            href={profile.linkedin}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="me noopener noreferrer"
+            eventName="external_profile_click"
+            eventProperties={{ destination: "linkedin", placement: "contact_section" }}
             className="flex items-center gap-3 group"
           >
             <Linkedin className="text-accent group-hover:scale-110 transition-transform" size={24} />
             <span className="text-lg text-foreground/80 group-hover:text-accent transition-colors">
               linkedin.com/in/joseph-chiko-kasongo
             </span>
-          </a>
+          </AnalyticsLink>
         </div>
 
         <div className="flex flex-col gap-3 pt-4 sm:flex-row">
           <Button asChild className="w-full md:w-auto bg-accent hover:bg-accent/90 text-accent-foreground">
-            <a href="mailto:cdamberd@gmail.com">Send me an email</a>
+            <AnalyticsLink
+              href={`mailto:${profile.email}`}
+              eventName="contact_click"
+              eventProperties={{ method: "email", placement: "contact_cta" }}
+            >
+              Send me an email
+            </AnalyticsLink>
           </Button>
 
           <Button asChild variant="outline" className="w-full md:w-auto">
-            <a href="/docs/CV.pdf" download>Download CV</a>
+            <AnalyticsLink
+              href="/docs/CV.pdf"
+              download
+              eventName="download_cv"
+              eventProperties={{ placement: "contact_section" }}
+            >
+              Download CV
+            </AnalyticsLink>
           </Button>
         </div>
       </div>
