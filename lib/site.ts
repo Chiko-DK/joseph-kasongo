@@ -92,7 +92,8 @@ export const projects = [
     description:
       "Agile estimation web app built during Byte Orbit vacation work to help teams vote on story points during sprint planning.",
     stack: ["Vue.js", "Vuetify", "CSS", "Agile"],
-    image: "/pics/project-scrum.svg",
+    image: "/pics/scrum.png",
+    github: "https://github.com/Chiko-DK/Scrum-Poker",
   },
   {
     title: "Hotel Booking System",
