@@ -12,14 +12,14 @@ export default function Projects() {
           Featured Projects
         </h2>
         <p className="mt-4 text-foreground/60 max-w-xl mx-auto text-sm md:text-base">
-          A showcase of public projects demonstrating full stack thinking, user interface work, and practical software design.
+          A selection of startups, team products, and personal builds across full stack, data, and fintech work.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, i) => (
+        {projects.map((project) => (
           <Card
-            key={i}
+            key={project.title}
             className="group p-5 flex flex-col border bg-background transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
           >
             <div className="w-full h-40 rounded-lg bg-muted overflow-hidden mb-4">
@@ -72,13 +72,13 @@ export default function Projects() {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Open live demo for ${project.title}`}
+                  aria-label={`Open ${(project.demoLabel ?? "live demo").toLowerCase()} for ${project.title}`}
                   eventName="project_link_click"
                   eventProperties={{ project: project.title, destination: "demo" }}
                   className="flex items-center gap-2 px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground transition-all duration-200 hover:opacity-90 hover:-translate-y-[1px]"
                 >
                   <ExternalLink size={16} />
-                  Demo
+                  {project.demoLabel ?? "Demo"}
                 </AnalyticsLink>
               ) : null}
 

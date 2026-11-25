@@ -19,15 +19,15 @@ export default function About() {
             <div className="w-14 h-1 bg-accent rounded-full" />
 
             <p className="text-foreground/70 leading-relaxed">
-              I am Joseph Kasongo, most people call me Chiko, a full stack software developer based in Cape Town, South Africa. I graduated from the University of Cape Town with a BSc in Computer Science and Business Computing, and I am currently completing a BCom Honours in Information Systems.
+              I am Joseph Kasongo, most people call me Chiko, a full stack software developer based in Cape Town, South Africa. I hold a BSc in Computer Science and Business Computing from the University of Cape Town, and I completed a BCom Honours in Information Systems in November 2026, with honours research on cybersecurity awareness assessment.
             </p>
 
             <p className="text-foreground/70 leading-relaxed">
-              I enjoy building products from problem discovery to working prototypes. My experience includes full stack web applications, data visualisation tools, fintech prototypes, AI-assisted product features, and systems that connect user needs with maintainable technical solutions.
+              I enjoy building products from problem discovery to working software. I co-founded FreightProof, a road-freight evidence platform that placed 2nd in UCT&apos;s 2026 IS Honours capstone. And I am the technical lead of MaliGo, a fintech startup in UCT&apos;s GenesisBloc Launchpad. My work also spans a deployed student marketplace, data visualisation, PyTorch models, and reporting tools for real organisations.
             </p>
 
             <p className="text-foreground/70 leading-relaxed">
-              Through tutoring, technical support agent, and vacation work, I have built strong communication, mentoring, problem-solving, and stakeholder presentation skills alongside my engineering work.
+              Tutoring at UCT since 2024, a software development internship at Byte Orbit, and technical support work at Payment24 have built my communication, mentoring, problem-solving, and stakeholder presentation skills alongside my engineering work.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
@@ -48,7 +48,7 @@ export default function About() {
                   <h3 className="font-semibold text-foreground">Education</h3>
                 </div>
                 <p className="text-sm text-foreground/60">
-                  UCT BSc Computer Science & Business Computing, graduated 2025. Currently completing BCom Honours in Information Systems.
+                  UCT BSc Computer Science & Business Computing, conferred 2025 (Dean&apos;s Merit List 2023 and 2024). BCom Honours in Information Systems, completing Nov 2026.
                 </p>
               </div>
 
@@ -58,7 +58,7 @@ export default function About() {
                   <h3 className="font-semibold text-foreground">Experience</h3>
                 </div>
                 <p className="text-sm text-foreground/60">
-                  UCT tutor for systems analysis, design and development, databases, data structures, parallel computing, architecture, and mobile development.
+                  Co-founder and Technical Lead at MaliGo, UCT tutor for Systems Analysis, Design and Development since 2024, and Software Development Intern at Byte Orbit.
                 </p>
               </div>
 
@@ -68,7 +68,7 @@ export default function About() {
                   <h3 className="font-semibold text-foreground">Projects</h3>
                 </div>
                 <p className="text-sm text-foreground/60">
-                  Built UniSwap, MaliGo, ResViz, Lown, Scrum Poker, and other web, API, fintech, and data-focused products.
+                  Built FreightProof, MaliGo, UniSwap, ResVis, Scrum Poker, and other web, API, fintech, and data-focused products.
                 </p>
               </div>
 

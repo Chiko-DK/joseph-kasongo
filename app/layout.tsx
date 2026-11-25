@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 const siteDescription =
-  "Joseph Kasongo, also known as Chiko DK, is a Cape Town full stack software developer and UCT graduate building responsive web and mobile apps, backend APIs, and practical software products";
+  "Joseph Kasongo, also known as Chiko DK, is a Cape Town full stack software developer, UCT graduate, co-founder of FreightProof, and technical lead of MaliGo, building web and mobile apps, backend APIs, and data products.";
 
 export const metadata: Metadata = {
   applicationName: "Joseph Kasongo Portfolio",
@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   keywords: [
     "Joseph Kasongo",
     "Joseph Chiko Kasongo",
+    "Joseph Damberd Kasongo",
     "Chiko",
     "Chiko Damberd",
     "Chiko Kasongo",
@@ -55,6 +56,8 @@ export const metadata: Metadata = {
     "UCT Computer Science graduate",
     "BCom Honours Information Systems",
     "Cape Town software developer",
+    "FreightProof",
+    "MaliGo",
   ],
   referrer: "origin-when-cross-origin",
   robots: {
